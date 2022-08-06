@@ -18,7 +18,6 @@ export function update() {
 }
 
 export function draw(gameBoard) {
-    //console.log('Draw Snake')
     snakeBody.forEach(segment => {
         const snakeElement = document.createElement('div')
         snakeElement.style.gridRowStart = segment.y
@@ -33,7 +32,7 @@ export function expandSnake(amount) {
     newSegments += amount
 }
 
-export function onSnake(position, { ignoreHead = false} = {}){
+export function onSnake(position, { ignoreHead = false} = {}) {
     return snakeBody.some((segment, index) => {
         if (ignoreHead && index === 0) return false
         return equalPositions(segment, position)
@@ -44,7 +43,7 @@ export function getSnakeHead() {
     return snakeBody[0]
 }
 
-export function snakeIntersection(){
+export function snakeIntersection() {
     return onSnake(snakeBody[0], { ignoreHead: true })
 }
 
@@ -54,10 +53,7 @@ function equalPositions(pos1, pos2) {
 
 function addSegments() {
     for (let i = 0; i < newSegments; i++) {
-        // snakeBody[snakeBody.length] = { ...snakeBody[snakeBody.length - 1] }     // THIS IS BASICALLY THE SAME AS THE NEXT LINE OF CODE 
-        //                                                                          ONLY THE NEXT LINE IS NEATER...
         snakeBody.push({ ...snakeBody[snakeBody.length - 1] })
     }
-    // console.log(newSegments)
     newSegments = 0
 }
