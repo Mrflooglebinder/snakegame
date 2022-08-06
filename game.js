@@ -4,7 +4,7 @@ import{ update as updateFood, draw as drawFood } from './food.js'
 
 import{ outsideGrid } from './grid.js'
 
-let lasRenderTime = 0
+let lastRenderTime = 0
 let gameOver = false
 const gameBoard = document.getElementById('game-board')
 
@@ -14,12 +14,12 @@ function main(currentTime) {
     }
     
     window.requestAnimationFrame(main)
-    const secondsSinceLsdtRender = (currentTime - lasRenderTime) / 1000
-    if (secondsSinceLsdtRender <1 / SNAKE_SPEED) return
+    const secondsSinceLasdtRender = (currentTime - lastRenderTime) / 1000
+    if (secondsSinceLasdtRender <1 / SNAKE_SPEED) return
     
-    lasRenderTime = currentTime
+    lastRenderTime = currentTime
     // console.log(currentTime)
-    //console.log('screen rendered after a delay of ' + secondsSinceLsdtRender + ' seconds')
+    //console.log('screen rendered after a delay of ' + secondsSinceLasdtRender + ' seconds')
     
     update()
     draw()
@@ -42,5 +42,5 @@ function draw() {
 }
 
 function checkDeath(){
-    gameOver = outsideGrid(getSnakeHead) || snakeIntersection()
+    gameOver = outsideGrid(getSnakeHead()) || snakeIntersection()
 }
