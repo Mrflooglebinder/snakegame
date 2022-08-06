@@ -10,7 +10,10 @@ const gameBoard = document.getElementById('game-board')
 
 function main(currentTime) {
     if (gameOver){
-        return alert('You Loose')
+        if (confirm('Your so shit at this game :(   --- Click ok to get better.')){
+            window.location = '/'
+        }
+        return
     }
     
     window.requestAnimationFrame(main)
