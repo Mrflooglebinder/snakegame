@@ -49,4 +49,6 @@ function addSegments() {
         //                                                                          ONLY THE NEXT LINE IS NEATER...
         snakeBody.push({ ...snakeBody[snakeBody.length - 1] })
     }
+    // console.log(newSegments)
+    newSegments = 0
 }
