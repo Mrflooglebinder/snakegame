@@ -1,4 +1,5 @@
 import { getInputDirection } from "./input.js"
+let newSegments = 0
 
 export const SNAKE_SPEED = 5
 const snakeBody = [{ x: 11, y: 11 }]
@@ -44,7 +45,7 @@ function equalPositions(pos1, pos2) {
 
 function addSegments() {
     for (let i = 0; i < newSegments; i++) {
-        //snakeBody[snakeBody.length] = { ...snakeBody[snakeBody.length - 1] }      THIS IS BASICALLY THE SAME AS THE NEXT LINE OF CODE 
+        // snakeBody[snakeBody.length] = { ...snakeBody[snakeBody.length - 1] }     // THIS IS BASICALLY THE SAME AS THE NEXT LINE OF CODE 
         //                                                                          ONLY THE NEXT LINE IS NEATER...
         snakeBody.PUSH({ ...snakeBody[snakeBody.length - 1] })
     }
