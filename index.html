@@ -2,9 +2,9 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=>, initial-scale=1.0" />
-    <title>Document</title>
+    <title>SnakeGame</title>
     <style>
       body {
         height: 100vh;
@@ -13,7 +13,7 @@
         justify-content: center;
         align-items: center;
         margin: 0;
-        background-color: green;
+        background-color: rgb(34, 32, 32);
       }
 
       #game-board {
@@ -26,15 +26,16 @@
       }
 
       .snake {
-        background-color: hsl(24, 76%, 45%);
+        background-color: hsla(130, 100%, 48%, 0.596);
         border: 0.25vmin solid black;
       }
 
       .food {
-        background-color: hsl(240, 100%, 50%);
+        background-color: hsl(314, 89%, 48%);
         border: 0.25vmin solid black;
       }
     </style>
+    <script src="game.js" defer type="module"></script>
   </head>
   <body>
     <div id="game-board"></div>
